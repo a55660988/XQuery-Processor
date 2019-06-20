@@ -1,0 +1,7 @@
+for $a in doc("j_caesar.xml")/FM,
+    $b in doc("j_caesar.xml")/PERSONAE,
+    $ta in $a/P,
+    $tb in $b/TITLE,
+    $tat in $ta/text()
+where $a eq $b and $ta eq $tb and $tat eq "FM"
+return $tb, $ta
